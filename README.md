@@ -49,4 +49,4 @@
 >Java 8 / Spring Boot / Gradle / Spring Data JPA / QueryDSL  
 >H2 / MySQL / Spring Security / Jsoup / Vue.js / Element U  
 >  
->[프로젝트 상세 설명](https://github.com/JungHyung2/gitio.io) 참고
+>[프로젝트 상세 설명]([https://github.com/JungHyung2/gitio.io](https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo/blob/86f9eba3c7b3f8c9878a2ef920d16ca42767ce09/Strong1team2/src/main/java/com/smhrd/frontcontroller/FrontController.java#L4)https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo/blob/86f9eba3c7b3f8c9878a2ef920d16ca42767ce09/Strong1team2/src/main/java/com/smhrd/frontcontroller/FrontController.java#L4) 참고
