@@ -288,7 +288,7 @@ finally:
   Ajax 문제
 </summary>
 
-![제목을 입력해주세요_-003 (3)](https://github.com/jaewon07/jowonjae/assets/133577206/05384210-a2b9-466f-a6b0-ebea7d99af97)
+![제목을 입력해주세요_-003 (3)](https://github.com/jaewon07/jowonjae/assets/133577206/dc0db44a-618f-4ded-8e8b-c586f25c30f1)
 
 
 Ajax(Asynchronous JavaScript and XML)는 비동기적으로 서버와 데이터를 교환할 수 있는 기술이며. 페이지가 로드되고 나서 비동기적으로 데이터를 가져오기 때문에 $.ajax 메서드가 호출된 후에도 코드가 계속 진행되어, position 배열을 못찾는 현상 발생
