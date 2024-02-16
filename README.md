@@ -285,7 +285,7 @@ finally:
 
 <details>
 <summary>
-  1. 캐시 문제
+  Ajax 문제
 </summary>
 
 ![제목을 입력해주세요_-003 (3)](https://github.com/jaewon07/jowonjae/assets/133577206/e8a6adeb-1e06-416b-ada0-a0e66dc83a7d)
