@@ -63,7 +63,7 @@
 
 #### map.jsp
 <details>
-        
+<code>
 ```java
 <!DOCTYPE html>
 <html>
@@ -217,13 +217,16 @@
 </body>
 </html>
 ```
+</code>
 </details>
 
 <br>
 
+#### 병원 주소 크롤링 코드
 <details>
+<code>
+
 ```python
-        
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -274,10 +277,11 @@ try:
 finally:
     driver.quit()
 
-```
+</code>
 </details>
+```
 
-</details> 
+
     
 </br>
 
