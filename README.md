@@ -302,11 +302,7 @@ position 배열에 값을 넣는 부분과 마커를 생성하고 지도에 표�
 
 </details>
 
-
-
     
 </br>
 
-## 6. 회고 / 느낀점
->프로젝트 개발 회고 글: https://zuminternet.github.io/ZUM-Pilot-integer/
 </details> 
