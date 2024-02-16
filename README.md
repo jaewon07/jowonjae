@@ -278,9 +278,9 @@ try:
 finally:
     driver.quit()
 
+```
 </code>
 </details>
-```
 
 
     
