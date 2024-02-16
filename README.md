@@ -1,4 +1,4 @@
-![image](https://github.com/jaewon07/jowonjae/assets/133577206/7e300e71-ce6e-4866-b948-e433ce3e808d)<a href="https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo">
+<a href="https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo">
         <img src="https://github.com/Limmaji/hyeji/assets/118683437/36549b89-cf1d-493c-95db-2c7824672f35" width = "80%">
         
          
@@ -299,8 +299,6 @@ Ajax(Asynchronous JavaScript and XML)는 비동기적으로 서버와 데이터�
 position 배열에 값을 넣는 부분과 마커를 생성하고 지도에 표시하는 부분을displayMarkers 라는 함수로 감싸고 ajax안에 콜백함수로 사용하여 문제 해결
 
 ![제목을 입력해주세요_-003 (3)](https://github.com/jaewon07/jowonjae/assets/133577206/8dc8f79e-49a0-4322-8d4f-53c68bafcf25)
-
-
 
 </details>
 
