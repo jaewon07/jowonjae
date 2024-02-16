@@ -16,7 +16,6 @@
 > 
 
 <details>
-## 화면 구성
 
 ### 로그인/회원가입/회원수정/회원탈퇴
 ![제목을 입력해주세요_-001](https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo/assets/142488105/1581b26c-2a14-4444-a211-cac71a304e8f)
