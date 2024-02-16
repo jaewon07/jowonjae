@@ -1,4 +1,4 @@
-<a href="https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo">
+![image](https://github.com/jaewon07/jowonjae/assets/133577206/7e300e71-ce6e-4866-b948-e433ce3e808d)<a href="https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo">
         <img src="https://github.com/Limmaji/hyeji/assets/118683437/36549b89-cf1d-493c-95db-2c7824672f35" width = "80%">
         
          
@@ -221,8 +221,6 @@
 ```  
 </details>
 
-<br>
-
 #### 병원 주소 크롤링 코드
 <details>
 <code>
@@ -280,7 +278,32 @@ finally:
 
 ```
 </code>
+
 </details>
+
+#### 트러블 슈팅
+
+<details>
+<summary>
+  1. 캐시 문제
+</summary>
+
+![제목을 입력해주세요_-003 (3)](https://github.com/jaewon07/jowonjae/assets/133577206/e8a6adeb-1e06-416b-ada0-a0e66dc83a7d)
+
+
+Ajax(Asynchronous JavaScript and XML)는 비동기적으로 서버와 데이터를 교환할 수 있는 기술이며. 페이지가 로드되고 나서 비동기적으로 데이터를 가져오기 때문에 $.ajax 메서드가 호출된 후에도 코드가 계속 진행되어, position 배열을 못찾는 현상 발생
+
+해결방안
+
+데이터가 도착하기 전에 다음 코드가 실행되는 문제를 해결하기 위해,
+position 배열에 값을 넣는 부분과 마커를 생성하고 지도에 표시하는 부분을displayMarkers 라는 함수로 감싸고 ajax안에 콜백함수로 사용하여 문제 해결
+
+![제목을 입력해주세요_-003 (3)](https://github.com/jaewon07/jowonjae/assets/133577206/8dc8f79e-49a0-4322-8d4f-53c68bafcf25)
+
+
+
+</details>
+
 
 
     
