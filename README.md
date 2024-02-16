@@ -60,7 +60,58 @@
 - 마커를 클릭하면 중독 치료 센터의 이름과 주소를 볼 수있다
 #### 병원 주소 크롤링 코드
 <details>
-        
+```python
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium import webdriver
+import time
+import pandas as pd
+
+driver = webdriver.Chrome()
+
+try:
+    driver.get("https://pcmap.place.naver.com/place/list?query=%EC%A4%91%EB%8F%85%EC%B9%98%EB%A3%8C%EC%84%BC%ED%84%B0&x=126.86638294606388&y=35.14658199999941&clientX=126.866383&clientY=35.146582&bounds=126.86109362988799%3B35.14109005710702%3B126.87188683896443%3B35.151898128441516&ts=1705409585097&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%A4%91%EB%8F%85%EC%B9%98%EB%A3%8C%EC%84%BC%ED%84%B0")
+
+    wait = WebDriverWait(driver, 10)
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+
+    data = {'HospitalInfo': [], 'Address': []}
+
+    for k in range(1, 5):
+        for i in range(1, 7):
+            scroll_container = driver.find_element(By.ID, '_pcmap_list_scroll_container')
+            driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight;", scroll_container)
+            time.sleep(1)
+
+        address_elements = driver.find_elements(By.CLASS_NAME, "uFxr1")
+        hospital_elements = driver.find_elements(By.CLASS_NAME, "YwYLL")
+
+        for address_element, hospital_element in zip(address_elements, hospital_elements):
+            hospitals = hospital_element.text
+            hospital_info = hospitals
+            address_element.click()
+            address_element = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "zZfO1")))
+            address = address_element.text
+            address = address[3:-2]
+
+            data['HospitalInfo'].append(hospital_info)
+            data['Address'].append(address)
+
+        if k>=1 and k<=3:
+            driver.find_element(By.CSS_SELECTOR, f"#app-root > div > div.XUrfU > div.zRM9F > a:nth-child({k+2})").click()
+            time.sleep(2)  # 페이지 이동 후 충분한 대기 시간을 두어 페이지가 로드될 수 있도록 합니다.
+
+    # 데이터프레임 생성
+    df = pd.DataFrame(data)
+
+    # 엑셀 파일로 저장
+    df.to_excel('hospital_data.xlsx', index=False)
+
+finally:
+    driver.quit()
+
+```
 </details>
 
 #### map.jsp
