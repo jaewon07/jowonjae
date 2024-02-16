@@ -66,8 +66,160 @@
 #### map.jsp
 <details>
         
-</details>
+```java
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>여러개 마커 표시하기</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+   <div id="map" style="width: 100%; height: 1000px;"></div>
 
+   <script type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d0ff50962bd050bd1f6311e3d126443&libraries=services"></script>
+   <script>
+      var globalResult;
+      var positions = [];
+      var map;
+      var marker;
+      var markers = [];
+
+      $(function() {
+         $.ajax({
+            url : "Map.do",
+            method : 'GET',
+            dataType : "json",
+            contentType : "application/json; charset=utf-8",
+            success : function(result) {
+               globalResult = result;
+               // 마커를 생성하고 표시하는 함수 호출(콜백함수) 
+               displayMarkers();
+            },
+            error : function(error) {
+               console.log("실패");
+            }
+         });
+
+         // 마커를 생성하고 표시하는 함수
+         function displayMarkers() {
+            var mapContainer = document.getElementById('map');
+            var mapOption = {
+               center : new kakao.maps.LatLng(35.1305421, 126.858356),
+               level : 5
+            };
+            map = new kakao.maps.Map(mapContainer, mapOption);
+
+            for (var i = 0; i < globalResult.length; i++) {
+               positions.push({
+                  title : globalResult[i].M_TREAT,
+                  latlng : new kakao.maps.LatLng(
+                        globalResult[i].M_ADDRESS_Y,
+                        globalResult[i].M_ADDRESS_X)
+               });
+            }
+
+            // 마커 이미지의 이미지 주소입니다
+            var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+
+            for (var i = 0; i < positions.length; i++) {
+               // 마커 이미지의 이미지 크기 입니다
+               var imageSize = new kakao.maps.Size(20, 27);
+
+               // 마커 이미지를 생성합니다    
+               var markerImage = new kakao.maps.MarkerImage(imageSrc,
+                     imageSize);
+
+               // 마커를 생성합니다
+               marker = new kakao.maps.Marker({
+                  map : map, // 마커를 표시할 지도
+                  position : positions[i].latlng, // 마커를 표시할 위치
+                  title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                  image : markerImage
+                  // 마커 이미지 z
+               });
+               markers.push(marker); // 수정: markers 배열에 마커 추가
+            }
+
+            // 현재 위치 가져오기
+            if (navigator.geolocation) {
+               navigator.geolocation
+                     .getCurrentPosition(function(position) {
+                        var lat = position.coords.latitude; // 위도
+                        var lon = position.coords.longitude; // 경도
+
+                        var locPosition = new kakao.maps.LatLng(lat,
+                              lon);
+                        var message = '<div style="padding:5px;">내 위치</div>';
+
+                        // 마커와 인포윈도우를 표시합니다
+                        displayMarker(locPosition, message);
+                        // 병원 인포인도우를 표시합니다
+                        HinfoWindow();
+                     });
+            } else {
+               // HTML5의 GeoLocation을 사용할 수 없을 때 기본 위치로 설정
+               var locPosition = new kakao.maps.LatLng(37.566535,
+                     126.9779692);
+               var message = 'geolocation을 사용할 수 없어요..';
+
+               displayMarker(locPosition, message);
+            }
+         }
+
+         // 지도에 마커와 인포윈도우를 표시하는 함수
+         function displayMarker(locPosition, message) {
+            // 현재위치 마커를 생성합니다
+            marker = new kakao.maps.Marker({
+               map : map,
+               position : locPosition
+               
+            });
+
+            var iwContent = message; // 인포윈도우에 표시할 내용
+            var iwRemoveable = true;
+
+            // 인포윈도우를 생성합니다
+            var infowindow = new kakao.maps.InfoWindow({
+               content : iwContent,
+               removable : true
+            });
+
+            // 인포윈도우를 마커위에 표시합니다 
+            infowindow.open(map, marker);
+
+            // 지도 중심 좌표를 접속 위치로 변경합니다
+            map.setCenter(locPosition);
+         }
+
+         // 병원 인포인도우
+         function HinfoWindow() {
+            // 수정: 배열에 있는 모든 마커에 이벤트 리스너 추가
+            markers.forEach(function (marker, index) {
+               console.log(globalResult[index].M_TREAT)
+               var HiwContent = '<div style="padding:5px;">'+"병원: " + globalResult[index].M_TREAT + "..." + '<br/>'+ "주소: "+globalResult[index].M_ADDRESS +'</div>';
+
+               var Hinfowindow = new kakao.maps.InfoWindow({
+                  content: HiwContent,
+                  removable: true
+               });
+
+               kakao.maps.event.addListener(marker, 'click', function () {
+                  // 마커 위에 인포윈도우를 표시합니다
+                  Hinfowindow.open(map, marker);
+               });
+            });
+         }
+      });
+   </script>
+</body>
+</html>
+```
+</details>
 </details> 
     
 </br>
