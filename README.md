@@ -61,7 +61,7 @@
 
 <br>
 
-#### map.jsp
+#### map.jsp 세부코드
 <details>
         
 ```java
@@ -120,15 +120,15 @@
                });
             }
 
-            // 마커 이미지의 이미지 주소입니다
+            // 마커 이미지의 이미지 주소
             var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
 
             for (var i = 0; i < positions.length; i++) {
-               // 마커 이미지의 이미지 크기 입니다
+               // 마커 이미지의 이미지 크기
                var imageSize = new kakao.maps.Size(20, 27);
 
-               // 마커 이미지를 생성합니다    
+               // 마커 이미지를 생성    
                var markerImage = new kakao.maps.MarkerImage(imageSrc,
                      imageSize);
 
@@ -136,9 +136,9 @@
                marker = new kakao.maps.Marker({
                   map : map, // 마커를 표시할 지도
                   position : positions[i].latlng, // 마커를 표시할 위치
-                  title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                  title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시
                   image : markerImage
-                  // 마커 이미지 z
+                  // 마커 이미지
                });
                markers.push(marker); // 수정: markers 배열에 마커 추가
             }
@@ -154,9 +154,9 @@
                               lon);
                         var message = '<div style="padding:5px;">내 위치</div>';
 
-                        // 마커와 인포윈도우를 표시합니다
+                        // 마커와 인포윈도우를 표시
                         displayMarker(locPosition, message);
-                        // 병원 인포인도우를 표시합니다
+                        // 병원 인포인도우를 표시
                         HinfoWindow();
                      });
             } else {
@@ -171,7 +171,7 @@
 
          // 지도에 마커와 인포윈도우를 표시하는 함수
          function displayMarker(locPosition, message) {
-            // 현재위치 마커를 생성합니다
+            // 현재위치 마커를 생성
             marker = new kakao.maps.Marker({
                map : map,
                position : locPosition
@@ -181,16 +181,16 @@
             var iwContent = message; // 인포윈도우에 표시할 내용
             var iwRemoveable = true;
 
-            // 인포윈도우를 생성합니다
+            // 인포윈도우를 생성
             var infowindow = new kakao.maps.InfoWindow({
                content : iwContent,
                removable : true
             });
 
-            // 인포윈도우를 마커위에 표시합니다 
+            // 인포윈도우를 마커위에 표시
             infowindow.open(map, marker);
 
-            // 지도 중심 좌표를 접속 위치로 변경합니다
+            // 지도 중심 좌표를 접속 위치로 변경
             map.setCenter(locPosition);
          }
 
@@ -207,7 +207,7 @@
                });
 
                kakao.maps.event.addListener(marker, 'click', function () {
-                  // 마커 위에 인포윈도우를 표시합니다
+                  // 마커 위에 인포윈도우를 표시
                   Hinfowindow.open(map, marker);
                });
             });
@@ -265,7 +265,7 @@ try:
 
         if k>=1 and k<=3:
             driver.find_element(By.CSS_SELECTOR, f"#app-root > div > div.XUrfU > div.zRM9F > a:nth-child({k+2})").click()
-            time.sleep(2)  # 페이지 이동 후 충분한 대기 시간을 두어 페이지가 로드될 수 있도록 합니다.
+            time.sleep(2) 
 
     # 데이터프레임 생성
     df = pd.DataFrame(data)
