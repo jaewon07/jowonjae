@@ -63,7 +63,6 @@
 
 #### map.jsp
 <details>
-<code>
         
 ```java
 <!DOCTYPE html>
@@ -217,9 +216,10 @@
    </script>
 </body>
 </html>
-</code>
+
+
+```  
 </details>
-```
 
 <br>
 
