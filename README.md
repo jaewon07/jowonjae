@@ -1,5 +1,6 @@
-![image](https://github.com/jaewon07/jowonjae/assets/133577206/ba1f06c2-d937-4634-83db-0a97712bf347)![image](https://github.com/jaewon07/jowonjae/assets/133577206/6a389a1e-5574-4683-8bc3-4f6d785be85b)<a href="https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo">
+<a href="https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo">
         <img src="https://github.com/Limmaji/hyeji/assets/118683437/36549b89-cf1d-493c-95db-2c7824672f35" width = "80%">
+        
         
         
  </a>
