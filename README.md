@@ -1,3 +1,122 @@
+<a href="https://github.com/KIMGUUNI/A_EyeF/">
+        <img src="https://github.com/Limmaji/hyeji/assets/118683437/dd5ab833-a1d1-4136-8821-d3df838b5cd2" width = "80%">
+ </a>
+ 
+ # 🖥 A-EYE 🖥
+
+> #### 🏆 수상 : 우수상
+> 
+> ### Team name : A_eye
+> 
+> #### AI 기반 CCTV 분석을 통한 맞춤 광고 재공 서비스
+> 
+> #### 역할 : BackEnd 
+>
+> #### 기간 : 2024년 02월 01일 ~ 02월 27일 (27일 소요)
+
+
+<details>
+
+</br>
+
+<img src = "https://github.com/KIMGUUNI/A_EyeF/assets/142488051/d002a731-40eb-4bec-9337-c2773b836a6a" width="100%" height="100%">
+
+</br>
+
+### 결제페이지
+
+![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/8547053a-4efc-4f9e-9e1f-a770c049d704)
+
+
+  - 신청한 광고의 현재 재생 횟수에 따른 결제 금액이 보여진다.
+  - 결제를 원하는 광고를 선택하여 결제 가능하다.
+  - 간편 결제가 가능하다. (카카오페이,삼성페이 등)
+
+</br>
+
+### JWT
+![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/236167f1-2452-4775-bf4b-b063490f5811)
+- JWT를 통해 사용자 인증을 하고 권한을 부여한다.
+- access token과 refresh token을 사용하였으며, RTR 기법을 적용하였다.
+
+</br>
+
+### 사용자 정보 암호화
+![image](https://github.com/jaewon07/jowonjae/assets/133577206/0d7ddcde-0888-4f2a-a92b-468fab185ab1)
+
+- 블로피시 기반 Bcrypt 암호화를 적용하였다.
+- Bcrypt는 단방향 해시 알고리즘이기 때문에 복호화가 불가능했고, 때문에 matches 함수를 이용해 주어진 입력값과 저장된 해시를 비교하여 인증을 수행하였다.
+
+</br>
+
+
+## 마이페이지
+
+![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/20c8f44e-0cf9-45d6-a8dd-5c8a1dc61890)
+  
+  - 사용자가 신청한 광고 리스트를 볼 수 있다.
+  - 사용자는 문의글 작성이 가능하다.
+  - 관리자는 모든 문의 내용 열람, 답변 및 삭제가 가능하다.
+
+</br>
+
+## 광고 신청
+![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/a45c5e19-6983-4967-8d83-52d0f6b00479)
+
+
+
+  - 사용자는 원하는 타겟의 성별과 연령을 선택한다.
+  - 선택 후 광고 파일을 업로드한다.
+  - 광고 신청 버튼을 클릭하면 S3에 정보가 저장된다.
+
+</br>
+
+## 트러블 슈팅
+### 토큰 관리 문제
+
+<details>
+  
+#### 문제 상황
+  - 리프레시 토큰을 DB에 저장 시, 만료된 토큰이 DB에 계속 쌓이는 문제 발생
+
+#### 해결 시도
+  - DB 스케줄러를 이용하여 주기적으로 삭제하려 했으나, 권한 부여의 어려움 발생
+
+#### 해결 방안
+  - 스프링 스케줄러를 활용, 만료된 토큰을 삭제하여 해결
+
+~~~java
+
+@Scheduled(fixeRate=604800000)
+
+~~~
+
+
+</details>
+
+</br>
+
+### CORS
+
+<details>
+  
+#### 문제 상황
+  - 웹 브라우저에서 보안상의 이유로 동일한 출처(origin)가 아닌 서버로부터 리소스를 요청할 때 발생하는 정책으로 React와 Spring boot가 API 통신을 할때 차단당하 는 상황 발생
+
+#### 해결 방안
+![image](https://github.com/jaewon07/jowonjae/assets/133577206/9155af82-d298-4a23-822c-73492793f3f9)
+
+  - Spring Boot 애플리케이션에서 CORS 구성을 추가하고, 클라이언트 요청을 허용할 출처를 설정하여 해결
+
+
+
+</details>
+
+
+</details>
+
+</br>
+
 <a href="https://github.com/2023-SMHRD-IS-CLOUD-1/StrongRepo">
         <img src="https://github.com/Limmaji/hyeji/assets/118683437/36549b89-cf1d-493c-95db-2c7824672f35" width = "80%">
         
@@ -314,116 +433,4 @@ position 배열에 값을 넣는 부분과 마커를 생성하고 지도에 표�
 
 
 
-<a href="https://github.com/KIMGUUNI/A_EyeF/">
-        <img src="https://github.com/Limmaji/hyeji/assets/118683437/dd5ab833-a1d1-4136-8821-d3df838b5cd2" width = "80%">
- </a>
- 
- # 🖥 A-EYE 🖥
 
-> #### 🏆 수상 : 우수상
-> 
-> ### Team name : A_eye
-> 
-> #### AI 기반 CCTV 분석을 통한 맞춤 광고 재공 서비스
-> 
-> #### 역할 : BackEnd 
->
-> #### 기간 : 2024년 02월 01일 ~ 02월 27일 (27일 소요)
-
-
-<details>
-
-</br>
-
-<img src = "https://github.com/KIMGUUNI/A_EyeF/assets/142488051/d002a731-40eb-4bec-9337-c2773b836a6a" width="100%" height="100%">
-
-</br>
-
-### 결제페이지
-
-![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/8547053a-4efc-4f9e-9e1f-a770c049d704)
-
-
-  - 신청한 광고의 현재 재생 횟수에 따른 결제 금액이 보여진다.
-  - 결제를 원하는 광고를 선택하여 결제 가능하다.
-  - 간편 결제가 가능하다. (카카오페이,삼성페이 등)
-
-</br>
-
-### JWT
-![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/236167f1-2452-4775-bf4b-b063490f5811)
-- JWT를 통해 사용자 인증을 하고 권한을 부여한다.
-- access token과 refresh token을 사용하였으며, RTR 기법을 적용하였다.
-
-</br>
-
-### 사용자 정보 암호화
-![image](https://github.com/jaewon07/jowonjae/assets/133577206/0d7ddcde-0888-4f2a-a92b-468fab185ab1)
-
-- 블로피시 기반 Bcrypt 암호화를 적용하였다.
-- Bcrypt는 단방향 해시 알고리즘이기 때문에 복호화가 불가능했고, 때문에 matches 함수를 이용해 주어진 입력값과 저장된 해시를 비교하여 인증을 수행하였다.
-
-</br>
-
-
-## 마이페이지
-
-![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/20c8f44e-0cf9-45d6-a8dd-5c8a1dc61890)
-  
-  - 사용자가 신청한 광고 리스트를 볼 수 있다.
-  - 사용자는 문의글 작성이 가능하다.
-  - 관리자는 모든 문의 내용 열람, 답변 및 삭제가 가능하다.
-
-</br>
-
-## 광고 신청
-![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/a45c5e19-6983-4967-8d83-52d0f6b00479)
-
-
-
-  - 사용자는 원하는 타겟의 성별과 연령을 선택한다.
-  - 선택 후 광고 파일을 업로드한다.
-  - 광고 신청 버튼을 클릭하면 S3에 정보가 저장된다.
-
-</br>
-
-## 트러블 슈팅
-### 토큰 관리 문제
-
-<details>
-  
-#### 문제 상황
-  - 리프레시 토큰을 DB에 저장 시, 만료된 토큰이 DB에 계속 쌓이는 문제 발생
-
-#### 해결 방안
-  - 스프링 스케줄러를 활용, 만료된 토큰을 삭제하여 해결
-
-~~~java
-
-@Scheduled(fixeRate=604800000)
-
-~~~
-
-
-</details>
-
-</br>
-
-### CORS
-
-<details>
-  
-#### 문제 상황
-  - 웹 브라우저에서 보안상의 이유로 동일한 출처(origin)가 아닌 서버로부터 리소스를 요청할 때 발생하는 정책으로 React와 Spring boot가 API 통신을 할때 차단당하 는 상황 발생
-
-#### 해결 방안
-![image](https://github.com/jaewon07/jowonjae/assets/133577206/9155af82-d298-4a23-822c-73492793f3f9)
-
-  - Spring Boot 애플리케이션에서 CORS 구성을 추가하고, 클라이언트 요청을 허용할 출처를 설정하여 해결
-
-
-
-</details>
-
-
-</details>
