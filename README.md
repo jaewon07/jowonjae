@@ -352,14 +352,13 @@ position 배열에 값을 넣는 부분과 마커를 생성하고 지도에 표�
 
 ### JWT
 ![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/236167f1-2452-4775-bf4b-b063490f5811)
-
 - JWT를 통해 사용자 인증을 하고 권한을 부여한다.
 - access token과 refresh token을 사용하였으며, RTR 기법을 적용하였다.
 
 </br>
 
 ### 사용자 정보 암호화
-![image](https://github.com/KIMGUUNI/A_EyeF/assets/118683437/236167f1-2452-4775-bf4b-b063490f5811)
+![image](https://github.com/jaewon07/jowonjae/assets/133577206/0d7ddcde-0888-4f2a-a92b-468fab185ab1)
 
 - 블로피시 기반 Bcrypt 암호화를 적용하였다.
 - Bcrypt는 단방향 해시 알고리즘이기 때문에 복호화가 불가능했고, 때문에 matches 함수를 이용해 주어진 입력값과 저장된 해시를 비교하여 인증을 수행하였다.
@@ -387,6 +386,54 @@ position 배열에 값을 넣는 부분과 마커를 생성하고 지도에 표�
   - 광고 신청 버튼을 클릭하면 S3에 정보가 저장된다.
 
 </br>
+
+# 트러블 슈팅
+### 토큰 관리 문제
+
+<details>
+  
+#### 문제 상황
+  - 리프레시 토큰을 DB에 저장 시, 만료된 토큰이 DB에 계속 쌓이는 문제 발생
+
+#### 해결 시도
+  - DB 스케줄러를 이용하여 주기적으로 삭제하려 했으나, 권한 부여의 어려움 발생
+
+#### 해결 방안
+  - 스프링 스케줄러를 활용, 만료된 토큰을 삭제하여 해결
+
+~~~java
+
+@Scheduled(fixeRate=604800000)
+
+~~~
+
+
+</details>
+
+</br>
+
+### CORS
+
+<details>
+  
+#### 문제 상황
+  - 웹 브라우저에서 보안상의 이유로 동일천 출처(origin)가 아닌 서버로부터 리소스를 요청할 때 발생하는 정책으로 React와 Spring boot가 API 통신을 할때 차단당하 
+    는 상황 발생
+
+#### 해결 시도
+  - DB 스케줄러를 이용하여 주기적으로 삭제하려 했으나, 권한 부여의 어려움 발생
+
+#### 해결 방안
+  - 스프링 스케줄러를 활용, 만료된 토큰을 삭제하여 해결
+
+~~~java
+
+@Scheduled(fixeRate=604800000)
+
+~~~
+
+
+</details>
 
 
 </details>
