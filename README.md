@@ -302,31 +302,32 @@ position 배열에 값을 넣는 부분과 마커를 생성하고 지도에 표�
 
 </details>
 
-
-
     
 </br>
 
 </details> 
 
-<br>
+</br>
+</br>
+</br>
+
+
 
 <a href="https://github.com/KIMGUUNI/A_EyeF/">
         <img src="https://github.com/Limmaji/hyeji/assets/118683437/dd5ab833-a1d1-4136-8821-d3df838b5cd2" width = "80%">
  </a>
+ 
+ # 🖥 A-EYE 🖥
 
- <br>
-
- # 📺 A_Eye 📺
-
-> ### Team name : A_Eye
->
-> #### AI 기반 CCTV 분석을 통한 맞춤 광고 제공 서비스
->
-> #### 역할 : 마이페이지, 결제페이지 및 결제기능, 사용자 인증 및 권한 부여, 사용자 정보 암호화
->
-> #### 기간 : 2024년 02월 01일 ~ 02월 27일 (26일 소요)
+> #### 🏆 수상 : 우수상
 > 
+> ### Team name : A_eye
+> 
+> #### AI 기반 CCTV 분석을 통한 맞춤 광고 재공 서비스
+> 
+> #### 역할 : Modeling
+>
+> #### 기간 : 2024년 02월 01일 ~ 02월 27일 (27일 소요)
 
 
 <details>
