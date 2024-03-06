@@ -309,6 +309,14 @@ position 배열에 값을 넣는 부분과 마커를 생성하고 지도에 표�
 
 </details> 
 
+<br>
+
+<a href="https://github.com/KIMGUUNI/A_EyeF/">
+        <img src="https://github.com/Limmaji/hyeji/assets/118683437/dd5ab833-a1d1-4136-8821-d3df838b5cd2" width = "80%">
+ </a>
+
+ <br>
+
  # 📺 A_Eye 📺
 
 > ### Team name : A_Eye
