@@ -17,7 +17,7 @@
 
 <details>
 
-## 1. 사용 기술
+## 사용 기술
 #### `Back-end`
   - Spring
   - JQuery
