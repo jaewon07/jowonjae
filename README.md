@@ -17,6 +17,23 @@
 
 <details>
 
+## 1. 사용 기술
+#### `Back-end`
+  - Spring
+  - JQuery
+  - JavaScript
+  - Oracle
+  - AWS
+
+#### `Front-end`
+  - React
+  - HTML
+  - CSS
+  - JavaScript
+  - mui
+
+</br>
+
 </br>
 
 <img src = "https://github.com/KIMGUUNI/A_EyeF/assets/142488051/d002a731-40eb-4bec-9337-c2773b836a6a" width="100%" height="100%">
