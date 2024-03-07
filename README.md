@@ -24,6 +24,7 @@
   - JavaScript
   - Oracle
   - AWS
+  - Spring Security
 
 #### `Front-end`
   - React
