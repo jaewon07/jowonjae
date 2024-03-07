@@ -153,6 +153,23 @@
 > 
 
 <details>
+
+## 1. 사용 기술
+#### `Back-end`
+  - Java 8
+  - JQuery
+  - JavaScript
+  - Oracle
+  - Chart.js
+  - BootStrap
+  - JSP
+
+#### `Front-end`
+  - HTML
+  - CSS
+  - JavaScript
+
+</br>
         
 <br>
         
