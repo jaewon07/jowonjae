@@ -219,7 +219,7 @@ INSERT INTO orders (order_date) VALUES (NOW());
 
 # scp 전송 
 
-<img src="https://github.com/user-attachments/assets/4a44cecf-c4d4-4119-9c3a-6a53bfb2c80a"/>
+<img src="https://github.com/user-attachments/assets/e3488271-d9f6-4dfe-8b7f-83540234fc6e"/>
 
 </br>
 
@@ -268,13 +268,10 @@ INSERT INTO orders (order_date) VALUES (NOW());
 
 
 
-# 결론
-
-**Right Growing Index**의 경우, 순차적으로 증가하는 값들이 가장 오른쪽 리프 블록에 집중되면서 인덱스 블록 경합이 심해지고 초당 트랜잭션 처리량이 감소하는 문제가 발생함. 이를 해결하기 위해 **Reverse Index**를 사용한 결과, 데이터 삽입 성능이 향상된 것을 확인할 수 있었음.
-
-따라서, 순차적으로 증가하는 값을 인덱스하는 상황에서는 **Reverse Index**를 사용하는 것이 성능을 개선하는 데 유리할 수 있음.
+# 느낀점
 
 
+DB 서버 이중화는 마스터와 슬레이브 간에 데이터 동기화가 잘 되는지, 마스터 노드에 문제가 생기면 슬레이브가 제대로 failover 되는지가 이중화에서 가장 중요한 부분이라고 생각되었다.
 
 
 
