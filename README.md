@@ -211,6 +211,61 @@ INSERT INTO orders (order_date) VALUES (NOW());
 
 </br>
 
+# scp 전송 
+
+<img src="https://github.com/user-attachments/assets/4a44cecf-c4d4-4119-9c3a-6a53bfb2c80a"/>
+
+</br>
+
+# scp 전송 
+
+<img src="https://github.com/user-attachments/assets/4a44cecf-c4d4-4119-9c3a-6a53bfb2c80a"/>
+
+</br>
+
+# Slave 노드에 복구
+
+<img src="https://github.com/user-attachments/assets/b78b953c-2cf6-4450-9d33-0362940c0b77"/>
+<img src="https://github.com/user-attachments/assets/0f43e362-6216-4553-81e6-4653e53fdc3b"/>
+
+</br>
+
+# 마스터, 슬레이브 시작 후 ha 정상 작동 확인
+
+<img src="https://github.com/user-attachments/assets/f456bcda-74a7-4f2a-8bd2-f93a41705faf"/>
+
+</br>
+
+# Master 노드에서 테이블 생성 후 데이터 insert
+
+<img src="https://github.com/user-attachments/assets/f456bcda-74a7-4f2a-8bd2-f93a41705faf"/>
+
+</br>
+
+# 마스터, 슬레이브 시작 후 ha 정상 작동 확인
+
+<img src="https://github.com/user-attachments/assets/d8514200-c3fc-4107-a4ef-28d9e34b941c"/>
+
+</br>
+
+# Slave 노드에서 테이블 조회
+
+<img src="https://github.com/user-attachments/assets/4714e586-ffc8-459c-80df-5aa1fffe365a"/>
+
+</br>
+
+# Slave 노드 추가 전에 Master 노드에서 가지고 있던 데이터 복구 확인
+
+<img src="https://github.com/user-attachments/assets/aea34b19-c836-4a03-a837-7ea680b4748b"/>
+
+</br>
+
+# applyinfo  유틸리티로 진행상황 확인
+
+<img src="https://github.com/user-attachments/assets/f18f7a3c-2b61-4cab-bcc6-95d66852fce9"/>
+
+</br>
+
 
 
 # 결론
