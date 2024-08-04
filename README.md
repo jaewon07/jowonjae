@@ -124,6 +124,8 @@ INSERT INTO orders (order_date) VALUES (NOW());
 
 #### REVERSE INDEX --> 04분43초 소요 ( 약 21초 빠르게 수행됨 , 6.91%향상 )
 
+</br>
+
 # 결론
 
 **Right Growing Index**의 경우, 순차적으로 증가하는 값들이 가장 오른쪽 리프 블록에 집중되면서 인덱스 블록 경합이 심해지고 초당 트랜잭션 처리량이 감소하는 문제가 발생함. 이를 해결하기 위해 **Reverse Index**를 사용한 결과, 데이터 삽입 성능이 향상된 것을 확인할 수 있었음.
