@@ -26,6 +26,7 @@
 
 ### 이러한 해결 방안으로 reverse index를 이용할 수 있다.
 </br>
+
 # reverse index란?
 
 </br>
