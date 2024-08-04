@@ -140,7 +140,7 @@ INSERT INTO orders (order_date) VALUES (NOW());
 </details>
 
 <a href="https://github.com/KIMGUUNI/A_EyeF/">
-        <img src="https://github.com/user-attachments/assets/cff814e1-a8ba-47e9-828c-72ded458920d" width = "80%">
+        <img src="https://github.com/user-attachments/assets/b1dd13cd-eaf3-4639-86d7-9f0176001c80">
  </a>
  
  #  DB 서버 이중화
