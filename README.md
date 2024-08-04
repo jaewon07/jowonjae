@@ -1,3 +1,128 @@
+
+
+ # NORMAL INDEX , REVERSE INDEX INSERT 속도 차 비교 
+
+> Jmeter를 활용한 NORMAL INDEX , REVERSE INDEX INSERT 속도 차 비교
+> </br>
+> </br>
+> S/W : CUBRID, Jmeter
+
+<details>
+
+</br>
+right growing index란?
+
+- 순차적으로 증가하는 값이 들어가는 컬럼을 인덱스로 만들면 입력되는 값이 순차적으로 증가하기 때문에 B*tree 인덱스에서 가장 오른쪽 리프 블록에만 데이터가 쌓이는 현상
+- 이러한 인덱스는 동시 index가 심할 때 인덱스 블록 경합을 일으켜 초당 트랜잭션 처리량을 감소시킨다.
+
+이러한 해결 방안으로 reverse index를 이용할 수 있다.
+
+reverse index란?
+
+- 말 그대로 입력된 키 값을 거꾸로 변환해서 저장하는 인덱스
+- 순차적으로 입력되는 값을 거꾸로 변환해서 저장하면 마치 데이터가 랜덤값처럼 변환이 되기 때문에 데이터를 고르게 저장할 수 있다. 따라서 리프 블록 맨 우측에만 집중되는 트랜잭션을 리프 블록 전체에 고르게 분산시키는 효과를 얻을 수 있다.
+- Reverse Index에 대해서는 범위 조건(BETWEEN이나 >, <, >=, <= 같은)이 Access 조건(즉, 값을 실제로 찾을 수 있는 조건)으로 사용될 수 없다.
+
+Jmeter를 이용한 다량의 insert 수행 시 NORMAL INDEX 존재 시에 INSERT 속도, REVERSE INDEX 존재 시에 INSERT 속도 차 비교
+
+테스트 목적
+
+- Right Growing Index가 초당 트랜잭션 처리량에 미치는 영향을 분석
+- Reverse Index를 사용했을 때 데이터 삽입 성능이 어떻게 향상되는지 확인
+
+**NORMAL INDEX 테스트 진행**
+
+**Number of Threads : 20**
+
+**Ramp-up period : 1**
+
+**Loop Count : 10000**
+
+**테스트 쿼리**
+
+**`CREATE TABLE orders (
+order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  
+order_id INT
+);`**
+
+**`CREATE INDEX idx_order_date ON orders(order_date);`**
+
+**`INSERT** **INTO** orders (order_date) **VALUES** (NOW());`
+
+소요 시간 : 05분04초
+
+처리량 : 657.3/sec
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e0f7d43-56b5-4ebf-8e04-53be394f4c63/7e0c669e-e188-4d9d-bf5d-8e4b4a33e655/Untitled.png)
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e0f7d43-56b5-4ebf-8e04-53be394f4c63/b716f152-2200-439f-a636-732007270e59/Untitled.png)
+
+**REVERSE INDEX 테스트 진행**
+
+**Number of Threads : 20**
+
+**Ramp-up period : 1**
+
+**Loop Count : 10000**
+
+**테스트 쿼리**
+
+**`CREATE TABLE orders (
+order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+order_id INT
+);`**
+
+**`CREATE INDEX idx_order_date ON orders(REVERSE(order_date));`**
+
+**`INSERT** **INTO** orders (order_date) **VALUES** (NOW());`
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e0f7d43-56b5-4ebf-8e04-53be394f4c63/ca3ba807-ea3b-467d-87cd-aed311a783dc/Untitled.png)
+
+**소요 시간 : 04분43초**
+
+**처리량 : 706.2/sec**
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1e0f7d43-56b5-4ebf-8e04-53be394f4c63/a362be42-3598-4331-b505-311b68225682/Untitled.png)
+
+NORMAL INDEX --> 05분04초 소요
+
+REVERSE INDEX --> 04분43초 소요 ( 약 21초 빠르게 수행됨 , 6.91%향상 )
+
+**결론**
+
+**Right Growing Index**의 경우, 순차적으로 증가하는 값들이 가장 오른쪽 리프 블록에 집중되면서 인덱스 블록 경합이 심해지고 초당 트랜잭션 처리량이 감소하는 문제가 발생함. 이를 해결하기 위해 **Reverse Index**를 사용한 결과, 데이터 삽입 성능이 향상된 것을 확인할 수 있었음.
+
+따라서, 순차적으로 증가하는 값을 인덱스하는 상황에서는 **Reverse Index**를 사용하는 것이 성능을 개선하는 데 유리할 수 있음.
+
+
+
+
+
+
+</details>
+
+</br>
+
+### CORS
+
+<details>
+  
+#### 문제 상황
+  - 웹 브라우저에서 보안상의 이유로 동일한 출처(origin)가 아닌 서버로부터 리소스를 요청할 때 발생하는 정책으로 React와 Spring boot가 API 통신을 할때 차단당하 는 상황 발생
+
+#### 해결 방안
+![image](https://github.com/jaewon07/jowonjae/assets/133577206/9155af82-d298-4a23-822c-73492793f3f9)
+
+  - Spring Boot 애플리케이션에서 CORS 구성을 추가하고, 클라이언트 요청을 허용할 출처를 설정하여 해결
+
+
+
+</details>
+
+
+</details>
+
+</br>
 <a href="https://github.com/KIMGUUNI/A_EyeF/">
         <img src="https://github.com/Limmaji/hyeji/assets/118683437/dd5ab833-a1d1-4136-8821-d3df838b5cd2" width = "80%">
  </a>
