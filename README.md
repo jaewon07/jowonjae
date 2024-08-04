@@ -139,7 +139,96 @@ INSERT INTO orders (order_date) VALUES (NOW());
 
 </details>
 
+<a href="https://github.com/KIMGUUNI/A_EyeF/">
+        <img src="https://github.com/user-attachments/assets/cff814e1-a8ba-47e9-828c-72ded458920d" width = "80%">
+ </a>
+ 
+ #  DB 서버 이중화
+> DB 서버 이중화
+> </br>
+> </br>
+> S/W : CUBRID
 
+<details>
+
+</br>
+
+# 서버 이중화란?
+- 서버와 네트워크, 프로그램 등의 정보 시스템이 지속적으로 정상 운영이 가능한 고가용성(HA, High Availability) 서버로 구성하는 것
+- shared-nothing 구조 
+</br>
+
+# shared-nothing 구조란?
+<img src="https://github.com/user-attachments/assets/a5cf8cbd-8115-4d29-aaba-ef755c8fed06"/>
+
+- 복수의 서버가 독립적으로 동작하는 것
+
+## 장점
+- 확장성: 각 노드가 독립적이므로 새로운 노드를 추가하여 시스템 성능을 쉽게 확장할 수 있다.
+- 고가용성: 한 노드가 실패하더라도 다른 노드에 영향을 미치지 않으므로 시스템의 가용성이 높아진다.
+- 병렬 처리 효율성: 노드 간에 경합이 없으므로 병렬 처리가 효율적이다.
+- 데이터 지역성: 각 노드가 독립적으로 데이터를 처리하기 때문에 데이터 지역성이 좋아, 데이터 접근 시간이 줄어든다.
+
+## 단점
+- 데이터 일관성: 각 노드가 독립적이므로 데이터 일관성을 유지하기가 어렵다.
+- 복잡한 데이터 분배: 데이터를 각 노드에 분배하는 과정이 복잡할 수 있다.
+</br>
+
+# 이중화 순서
+
+</br>
+
+1. 마스터 노드와 슬레이브 노드가 동일하게 cubrid.conf, cubrid_ha.conf, databases.txt설정
+2. 슬레이브 노드에 동일한 이름의 데이터베이스 디렉토리 생성
+3. 마스터 노드 서비스 중지 후, 마스터 노드 백업
+4. scp로 전송
+5. 슬레이브 노드에서 데이터베이스 복구 (볼륨 경로가 반드시 같아야함)
+6. 마스터, 슬레이브 노드 시작
+7. ha 정상 작동 확인
+
+
+# cubrid.conf (M,S 동일)
+
+<img src="https://github.com/user-attachments/assets/fa51ba9e-de83-4987-b815-06f4e992badc"/>
+
+</br>
+
+# cubrid_ha.conf (M,S 동일)
+
+<img src="https://github.com/user-attachments/assets/7888d9c1-d2aa-4377-a4cb-6b0fd14f2760"/>
+
+</br>
+
+# databases.txt (M,S동일)
+
+<img src="https://github.com/user-attachments/assets/c67d2a09-f50a-4b33-bcd4-44568bac24b2"/>
+
+</br>
+
+# Master 노드의 DB 백업
+
+<img src="https://github.com/user-attachments/assets/c67d2a09-f50a-4b33-bcd4-44568bac24b2"/>
+
+</br>
+
+
+
+# 결론
+
+**Right Growing Index**의 경우, 순차적으로 증가하는 값들이 가장 오른쪽 리프 블록에 집중되면서 인덱스 블록 경합이 심해지고 초당 트랜잭션 처리량이 감소하는 문제가 발생함. 이를 해결하기 위해 **Reverse Index**를 사용한 결과, 데이터 삽입 성능이 향상된 것을 확인할 수 있었음.
+
+따라서, 순차적으로 증가하는 값을 인덱스하는 상황에서는 **Reverse Index**를 사용하는 것이 성능을 개선하는 데 유리할 수 있음.
+
+
+
+
+
+
+</details>
+
+
+
+</details>
 
 </details>
 
