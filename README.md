@@ -1,7 +1,4 @@
 
-
- # NORMAL INDEX , REVERSE INDEX INSERT 속도 차 비교 
-
 > Jmeter를 활용한 NORMAL INDEX , REVERSE INDEX INSERT 속도 차 비교
 > </br>
 > </br>
