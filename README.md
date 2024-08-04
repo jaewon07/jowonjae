@@ -48,6 +48,8 @@
 - Right Growing Index가 초당 트랜잭션 처리량에 미치는 영향을 분석
 - Reverse Index를 사용했을 때 데이터 삽입 성능이 어떻게 향상되는지 확인
 
+</br>
+
 # NORMAL INDEX 테스트 진행
 
 **Number of Threads : 20**
