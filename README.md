@@ -58,6 +58,8 @@
 
 **Loop Count : 10000**
 
+</br>
+
 **테스트 쿼리**
 
 <code>
@@ -91,6 +93,8 @@ INSERT INTO orders (order_date) VALUES (NOW());
 **Ramp-up period : 1**
 
 **Loop Count : 10000**
+
+</br>
 
 **테스트 쿼리**
 
