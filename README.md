@@ -143,7 +143,7 @@ INSERT INTO orders (order_date) VALUES (NOW());
 </br>
 </br>
 <a href="https://github.com/KIMGUUNI/A_EyeF/">
-        <img src="https://github.com/user-attachments/assets/b1dd13cd-eaf3-4639-86d7-9f0176001c80">
+        <img src="https://github.com/user-attachments/assets/b1dd13cd-eaf3-4639-86d7-9f0176001c80" width = "80%">
  </a>
  </br>
  </br>
