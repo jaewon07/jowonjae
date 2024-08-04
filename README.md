@@ -134,14 +134,19 @@ INSERT INTO orders (order_date) VALUES (NOW());
 
 
 
-
+</br>
+</br>
 
 
 </details>
 
+</br>
+</br>
 <a href="https://github.com/KIMGUUNI/A_EyeF/">
         <img src="https://github.com/user-attachments/assets/b1dd13cd-eaf3-4639-86d7-9f0176001c80">
  </a>
+ </br>
+ </br>
  
  #  DB 서버 이중화
 > DB 서버 이중화
@@ -276,14 +281,16 @@ DB 서버 이중화는 마스터와 슬레이브 간에 데이터 동기화가 �
 
 
 
-</details>
-
-
 
 </details>
 
+
+
 </details>
 
+</details>
+
+</br>
 </br>
 <a href="https://github.com/KIMGUUNI/A_EyeF/">
         <img src="https://github.com/Limmaji/hyeji/assets/118683437/dd5ab833-a1d1-4136-8821-d3df838b5cd2" width = "80%">
@@ -427,7 +434,8 @@ DB 서버 이중화는 마스터와 슬레이브 간에 데이터 동기화가 �
         
          
  </a>
- 
+ </br>
+ </br>
  
  # 💊 Drug is Death 💊
 
