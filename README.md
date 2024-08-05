@@ -212,12 +212,6 @@ INSERT INTO orders (order_date) VALUES (NOW());
 
 # Master 노드의 DB 백업
 
-<img src="https://github.com/user-attachments/assets/c67d2a09-f50a-4b33-bcd4-44568bac24b2"/>
-
-</br>
-
-# scp 전송 
-
 <img src="https://github.com/user-attachments/assets/4a44cecf-c4d4-4119-9c3a-6a53bfb2c80a"/>
 
 </br>
@@ -237,25 +231,20 @@ INSERT INTO orders (order_date) VALUES (NOW());
 
 # 마스터, 슬레이브 시작 후 ha 정상 작동 확인
 
-<img src="https://github.com/user-attachments/assets/f456bcda-74a7-4f2a-8bd2-f93a41705faf"/>
+<img src="https://github.com/user-attachments/assets/d8514200-c3fc-4107-a4ef-28d9e34b941c"/>
 
 </br>
 
 # Master 노드에서 테이블 생성 후 데이터 insert
 
-<img src="https://github.com/user-attachments/assets/f456bcda-74a7-4f2a-8bd2-f93a41705faf"/>
+<img src="https://github.com/user-attachments/assets/4714e586-ffc8-459c-80df-5aa1fffe365a"/>
 
 </br>
 
-# 마스터, 슬레이브 시작 후 ha 정상 작동 확인
-
-<img src="https://github.com/user-attachments/assets/d8514200-c3fc-4107-a4ef-28d9e34b941c"/>
-
-</br>
 
 # Slave 노드에서 테이블 조회
 
-<img src="https://github.com/user-attachments/assets/4714e586-ffc8-459c-80df-5aa1fffe365a"/>
+<img src="https://github.com/user-attachments/assets/057b42d0-c646-4ff1-9244-a02b89349bef"/>
 
 </br>
 
